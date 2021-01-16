@@ -4,3 +4,6 @@
 
 /src/BridgeDemoP/obj
 /src/BridgeDemoP/bin/Debug/net5.0
+/src/BridgeDemo.Tests/obj
+/src/BridgeDemo.Tests/bin/Debug/net5.0
+/src/.vs/BridgeDemoP/v16/TestStore/0

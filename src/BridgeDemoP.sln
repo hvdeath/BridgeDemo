@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeDemoP", "BridgeDemoP\BridgeDemoP.csproj", "{E7A54B10-9CEA-4C0A-8E02-556B6C21F969}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BridgeDemoP", "BridgeDemoP\BridgeDemoP.csproj", "{E7A54B10-9CEA-4C0A-8E02-556B6C21F969}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeDemo.Tests", "BridgeDemo.Tests\BridgeDemo.Tests.csproj", "{77F3440F-9D96-404B-AB0A-DF9B1895FEF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E7A54B10-9CEA-4C0A-8E02-556B6C21F969}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7A54B10-9CEA-4C0A-8E02-556B6C21F969}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7A54B10-9CEA-4C0A-8E02-556B6C21F969}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77F3440F-9D96-404B-AB0A-DF9B1895FEF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77F3440F-9D96-404B-AB0A-DF9B1895FEF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77F3440F-9D96-404B-AB0A-DF9B1895FEF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77F3440F-9D96-404B-AB0A-DF9B1895FEF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

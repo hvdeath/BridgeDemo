@@ -21,7 +21,7 @@ namespace BridgeDemoP
         public OneTimeGymTicket(DateTime purchaseTime): base(purchaseTime)
         {
         }
-        public override string Name => "Daily gym ticket";
+        public override string Name => "One Time gym ticket";
         protected override double Price => 1500;
 
         public override DateTime GetExpirationDate()
