@@ -4,11 +4,12 @@ namespace BridgeDemoP
 {
     public abstract class GymTicket 
     {
-        protected GymTicket(DateTime purchaseTime)
+        protected GymTicket(string name, DateTime purchaseTime)
         {
+            Name = name;
             PurchaseTime = purchaseTime;
         }
-        public abstract string Name { get;  }
+        public string Name { get; set; }
         protected abstract double Price { get;}
         public DateTime PurchaseTime { get; set; }
         public abstract DateTime GetExpirationDate();
@@ -18,10 +19,9 @@ namespace BridgeDemoP
 
     public class OneTimeGymTicket: GymTicket
     {
-        public OneTimeGymTicket(DateTime purchaseTime): base(purchaseTime)
+        public OneTimeGymTicket(string name, DateTime purchaseTime): base(name, purchaseTime)
         {
         }
-        public override string Name => "One Time gym ticket";
         protected override double Price => 1500;
 
         public override DateTime GetExpirationDate()
@@ -34,10 +34,9 @@ namespace BridgeDemoP
 
     public class MonthlyGymTicket : GymTicket
     {
-        public MonthlyGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        public MonthlyGymTicket(string name, DateTime purchaseTime): base(name, purchaseTime)
         {
         }
-        public override string Name => "Monthly ticket";
         protected override double Price => 15000;
 
         public override DateTime GetExpirationDate()
@@ -48,10 +47,9 @@ namespace BridgeDemoP
     }
     public class ThreeMonthGymTicket : GymTicket
     {
-        public ThreeMonthGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        public ThreeMonthGymTicket(string name, DateTime purchaseTime): base(name, purchaseTime)
         {
         }
-        public override string Name => "Three Month ticket";
         protected override double Price => 30000;
 
         public override DateTime GetExpirationDate()
@@ -63,52 +61,45 @@ namespace BridgeDemoP
 
     public class StudentOneTimeGymTicket : OneTimeGymTicket
     {
-        public StudentOneTimeGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        public StudentOneTimeGymTicket(string name, DateTime purchaseTime): base(name, purchaseTime)
         {
         }
-        public override string Name => "Student one timeym ticket";
-
        
         public override double GetPrice() => Price*0.8;
     }
 
     public class StudentMonthlyGymTicket : MonthlyGymTicket
     {
-        public StudentMonthlyGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        public StudentMonthlyGymTicket(string name, DateTime purchaseTime): base(name, purchaseTime)
         {
         }
-        public override string Name => "Monthly ticket";
 
         public override double GetPrice() => Price * 0.8;
     }
 
     public class StudentThreeMonthGymTicket : ThreeMonthGymTicket
     {
-        public StudentThreeMonthGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        public StudentThreeMonthGymTicket(string name, DateTime purchaseTime): base(name, purchaseTime)
         {
         }
-        public override string Name => "Three Month ticket";
 
         public override double GetPrice() => Price * 0.8;
     }
 
     public class SeniorOneTimeGymTicket : OneTimeGymTicket
     {
-        public SeniorOneTimeGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        public SeniorOneTimeGymTicket(string name, DateTime purchaseTime): base(name, purchaseTime)
         {
         }
-        public override string Name => "Senior one timeym ticket";
-
 
         public override double GetPrice() => Price * 0.5;
     }
 
     public class SeniorMonthlyGymTicket : MonthlyGymTicket
     {
-        public SeniorMonthlyGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        public SeniorMonthlyGymTicket(string name, DateTime purchaseTime): base(name, purchaseTime)
         {
         }
-        public override string Name => "Monthly ticket";
 
         public override double GetPrice() => Price * 0.5;
 
@@ -116,10 +107,9 @@ namespace BridgeDemoP
 
     public class SeniorThreeMonthGymTicket : ThreeMonthGymTicket
     {
-        public SeniorThreeMonthGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        public SeniorThreeMonthGymTicket(string name, DateTime purchaseTime): base(name, purchaseTime)
         {
         }
-        public override string Name => "Three Month ticket";
 
         public override double GetPrice() => Price * 0.5;
     }

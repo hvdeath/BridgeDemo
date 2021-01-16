@@ -5,15 +5,15 @@ using System;
 Console.WriteLine("Hello World Bridge Demo!");
 
 
-PrintDetails(new OneTimeGymTicket(DateTime.Now));
-PrintDetails(new MonthlyGymTicket(DateTime.Now));
-PrintDetails(new ThreeMonthGymTicket(DateTime.Now));
-PrintDetails(new StudentOneTimeGymTicket(DateTime.Now));
-PrintDetails(new StudentMonthlyGymTicket(DateTime.Now));
-PrintDetails(new StudentThreeMonthGymTicket(DateTime.Now));
-PrintDetails(new SeniorOneTimeGymTicket(DateTime.Now));
-PrintDetails(new SeniorMonthlyGymTicket(DateTime.Now));
-PrintDetails(new SeniorThreeMonthGymTicket(DateTime.Now));
+PrintDetails(new OneTimeGymTicket(nameof(OneTimeGymTicket), DateTime.Now));
+PrintDetails(new MonthlyGymTicket(nameof(MonthlyGymTicket), DateTime.Now));
+PrintDetails(new ThreeMonthGymTicket(nameof(ThreeMonthGymTicket), DateTime.Now));
+PrintDetails(new StudentOneTimeGymTicket(nameof(StudentOneTimeGymTicket), DateTime.Now));
+PrintDetails(new StudentMonthlyGymTicket(nameof(StudentMonthlyGymTicket), DateTime.Now));
+PrintDetails(new StudentThreeMonthGymTicket(nameof(StudentThreeMonthGymTicket), DateTime.Now));
+PrintDetails(new SeniorOneTimeGymTicket(nameof(SeniorOneTimeGymTicket), DateTime.Now));
+PrintDetails(new SeniorMonthlyGymTicket(nameof(SeniorMonthlyGymTicket), DateTime.Now));
+PrintDetails(new SeniorThreeMonthGymTicket(nameof(SeniorThreeMonthGymTicket), DateTime.Now));
 
 static void PrintDetails(GymTicket ticket)
 {
