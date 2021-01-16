@@ -13,10 +13,9 @@ namespace BridgeDemo.Tests
             // ARRANGE
 
             //ACT
-            GymTicket result = new OneTimeGymTicket(nameof(OneTimeGymTicket), DateTime.Now);
+            GymTicket result = new OneTimeGymTicket(nameof(OneTimeGymTicket), DateTime.Now, new NoDiscount());
 
             //ASSERT
-            Check.That(result.Name).IsEqualTo(nameof(OneTimeGymTicket));
             Check.That(result.GetPrice()).IsEqualTo(1500);
         }
 
@@ -26,10 +25,9 @@ namespace BridgeDemo.Tests
             // ARRANGE
 
             //ACT
-            GymTicket result = new MonthlyGymTicket(nameof(MonthlyGymTicket),DateTime.Now);
+            GymTicket result = new MonthlyGymTicket(nameof(MonthlyGymTicket),DateTime.Now, new NoDiscount());
 
             //ASSERT
-            Check.That(result.Name).IsEqualTo(nameof(MonthlyGymTicket));
             Check.That(result.GetPrice()).IsEqualTo(15000);
         }
 
@@ -39,10 +37,9 @@ namespace BridgeDemo.Tests
             // ARRANGE
 
             //ACT
-            GymTicket result = new ThreeMonthGymTicket(nameof(ThreeMonthGymTicket),DateTime.Now);
+            GymTicket result = new ThreeMonthGymTicket(nameof(ThreeMonthGymTicket),DateTime.Now, new NoDiscount());
 
             //ASSERT
-            Check.That(result.Name).IsEqualTo(nameof(ThreeMonthGymTicket));
             Check.That(result.GetPrice()).IsEqualTo(30000);
         }
 
@@ -52,12 +49,11 @@ namespace BridgeDemo.Tests
             // ARRANGE
 
             //ACT
-            GymTicket result = new StudentOneTimeGymTicket(nameof(StudentOneTimeGymTicket), DateTime.Now);
+            GymTicket result = new OneTimeGymTicket(nameof(OneTimeGymTicket), DateTime.Now, new StudentDiscount());
 
             //ASSERT
-            GymTicket refTicket = new OneTimeGymTicket(nameof(OneTimeGymTicket),DateTime.Now);
+            GymTicket refTicket = new OneTimeGymTicket(nameof(OneTimeGymTicket),DateTime.Now, new NoDiscount());
 
-            Check.That(result.Name).IsEqualTo(nameof(StudentOneTimeGymTicket));
             Check.That(result.GetPrice()).IsEqualTo(refTicket.GetPrice() * 0.8);
         }
 
@@ -67,12 +63,12 @@ namespace BridgeDemo.Tests
             // ARRANGE
 
             //ACT
-            GymTicket result = new StudentMonthlyGymTicket(nameof(ThreeMonthGymTicket), DateTime.Now);
+            GymTicket result = new MonthlyGymTicket(nameof(MonthlyGymTicket), DateTime.Now, new StudentDiscount());
+
 
             //ASSERT
-            GymTicket refTicket = new MonthlyGymTicket(nameof(MonthlyGymTicket), DateTime.Now);
+            GymTicket refTicket = new MonthlyGymTicket(nameof(MonthlyGymTicket), DateTime.Now, new NoDiscount());
 
-            Check.That(result.Name).IsEqualTo(nameof(ThreeMonthGymTicket));
             Check.That(result.GetPrice()).IsEqualTo(refTicket.GetPrice() * 0.8);
         }
 
@@ -82,12 +78,11 @@ namespace BridgeDemo.Tests
             // ARRANGE
 
             //ACT
-            GymTicket result = new StudentThreeMonthGymTicket(nameof(StudentThreeMonthGymTicket), DateTime.Now);
+            GymTicket result = new ThreeMonthGymTicket(nameof(ThreeMonthGymTicket), DateTime.Now, new StudentDiscount());
 
             //ASSERT
-            GymTicket refTicket = new ThreeMonthGymTicket(nameof(ThreeMonthGymTicket), DateTime.Now);
+            GymTicket refTicket = new ThreeMonthGymTicket(nameof(ThreeMonthGymTicket), DateTime.Now, new NoDiscount());
 
-            Check.That(result.Name).IsEqualTo(nameof(StudentThreeMonthGymTicket));
             Check.That(result.GetPrice()).IsEqualTo(refTicket.GetPrice() * 0.8);
         }
 
@@ -97,12 +92,11 @@ namespace BridgeDemo.Tests
             // ARRANGE
 
             //ACT
-            GymTicket result = new SeniorOneTimeGymTicket(nameof(SeniorOneTimeGymTicket), DateTime.Now);
+            GymTicket result = new OneTimeGymTicket(nameof(OneTimeGymTicket), DateTime.Now, new SeniorDiscount());
 
             //ASSERT
-            GymTicket refTicket = new OneTimeGymTicket(nameof(OneTimeGymTicket), DateTime.Now);
+            GymTicket refTicket = new OneTimeGymTicket(nameof(OneTimeGymTicket), DateTime.Now, new NoDiscount());
 
-            Check.That(result.Name).IsEqualTo(nameof(SeniorOneTimeGymTicket));
             Check.That(result.GetPrice()).IsEqualTo(refTicket.GetPrice() * 0.5);
         }
 
@@ -112,12 +106,11 @@ namespace BridgeDemo.Tests
             // ARRANGE
 
             //ACT
-            GymTicket result = new SeniorMonthlyGymTicket(nameof(SeniorMonthlyGymTicket), DateTime.Now);
+            GymTicket result = new MonthlyGymTicket(nameof(MonthlyGymTicket), DateTime.Now, new SeniorDiscount());
 
             //ASSERT
-            GymTicket refTicket = new MonthlyGymTicket(nameof(MonthlyGymTicket), DateTime.Now);
+            GymTicket refTicket = new MonthlyGymTicket(nameof(MonthlyGymTicket), DateTime.Now, new NoDiscount());
 
-            Check.That(result.Name).IsEqualTo(nameof(MonthlyGymTicket));
             Check.That(result.GetPrice()).IsEqualTo(refTicket.GetPrice() * 0.5);
         }
 
@@ -127,12 +120,11 @@ namespace BridgeDemo.Tests
             // ARRANGE
 
             //ACT
-            GymTicket result = new SeniorThreeMonthGymTicket(nameof(SeniorThreeMonthGymTicket), DateTime.Now);
+            GymTicket result = new ThreeMonthGymTicket(nameof(ThreeMonthGymTicket), DateTime.Now, new SeniorDiscount());
 
             //ASSERT
-            GymTicket refTicket = new ThreeMonthGymTicket(nameof(ThreeMonthGymTicket), DateTime.Now);
+            GymTicket refTicket = new ThreeMonthGymTicket(nameof(ThreeMonthGymTicket), DateTime.Now, new NoDiscount());
 
-            Check.That(result.Name).IsEqualTo(nameof(SeniorThreeMonthGymTicket));
             Check.That(result.GetPrice()).IsEqualTo(refTicket.GetPrice() * 0.5);
         }
     }
