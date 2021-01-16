@@ -7,7 +7,8 @@ Console.WriteLine("Hello World Bridge Demo!");
 
 PrintDetails(new OneTimeGymTicket(DateTime.Now));
 PrintDetails(new MonthlyGymTicket(DateTime.Now));
-
+PrintDetails(new StudentOneTimeGymTicket(DateTime.Now));
+PrintDetails(new StudentMonthlyGymTicket(DateTime.Now));
 
 static void PrintDetails(GymTicket ticket)
 {
@@ -20,7 +21,7 @@ static void PrintDetails(GymTicket ticket)
 
 static string GetPrice(GymTicket ticket)
 {
-    return $"{ticket.Price:0.00} HUF";
+    return $"{ticket.GetPrice():0.00} HUF";
 }
 
 static string GetValidFor(GymTicket ticket)
