@@ -7,10 +7,13 @@ Console.WriteLine("Hello World Bridge Demo!");
 
 PrintDetails(new OneTimeGymTicket(DateTime.Now));
 PrintDetails(new MonthlyGymTicket(DateTime.Now));
+PrintDetails(new ThreeMonthGymTicket(DateTime.Now));
 PrintDetails(new StudentOneTimeGymTicket(DateTime.Now));
 PrintDetails(new StudentMonthlyGymTicket(DateTime.Now));
+PrintDetails(new StudentThreeMonthGymTicket(DateTime.Now));
 PrintDetails(new SeniorOneTimeGymTicket(DateTime.Now));
 PrintDetails(new SeniorMonthlyGymTicket(DateTime.Now));
+PrintDetails(new SeniorThreeMonthGymTicket(DateTime.Now));
 
 static void PrintDetails(GymTicket ticket)
 {

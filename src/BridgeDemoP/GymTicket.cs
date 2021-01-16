@@ -46,6 +46,20 @@ namespace BridgeDemoP
         }
         public override double GetPrice() => Price;
     }
+    public class ThreeMonthGymTicket : GymTicket
+    {
+        public ThreeMonthGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        {
+        }
+        public override string Name => "Three Month ticket";
+        protected override double Price => 30000;
+
+        public override DateTime GetExpirationDate()
+        {
+            return PurchaseTime.AddDays(90);
+        }
+        public override double GetPrice() => Price;
+    }
 
     public class StudentOneTimeGymTicket : OneTimeGymTicket
     {
@@ -66,7 +80,16 @@ namespace BridgeDemoP
         public override string Name => "Monthly ticket";
 
         public override double GetPrice() => Price * 0.8;
+    }
 
+    public class StudentThreeMonthGymTicket : ThreeMonthGymTicket
+    {
+        public StudentThreeMonthGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        {
+        }
+        public override string Name => "Three Month ticket";
+
+        public override double GetPrice() => Price * 0.8;
     }
 
     public class SeniorOneTimeGymTicket : OneTimeGymTicket
@@ -89,5 +112,15 @@ namespace BridgeDemoP
 
         public override double GetPrice() => Price * 0.5;
 
+    }
+
+    public class SeniorThreeMonthGymTicket : ThreeMonthGymTicket
+    {
+        public SeniorThreeMonthGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        {
+        }
+        public override string Name => "Three Month ticket";
+
+        public override double GetPrice() => Price * 0.5;
     }
 }
