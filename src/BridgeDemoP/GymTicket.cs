@@ -68,4 +68,26 @@ namespace BridgeDemoP
         public override double GetPrice() => Price * 0.8;
 
     }
+
+    public class SeniorOneTimeGymTicket : OneTimeGymTicket
+    {
+        public SeniorOneTimeGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        {
+        }
+        public override string Name => "Senior one timeym ticket";
+
+
+        public override double GetPrice() => Price * 0.5;
+    }
+
+    public class SeniorMonthlyGymTicket : MonthlyGymTicket
+    {
+        public SeniorMonthlyGymTicket(DateTime purchaseTime) : base(purchaseTime)
+        {
+        }
+        public override string Name => "Monthly ticket";
+
+        public override double GetPrice() => Price * 0.5;
+
+    }
 }
